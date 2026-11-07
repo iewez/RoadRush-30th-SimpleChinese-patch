@@ -27,15 +27,15 @@
 
 ## 翻译效果
 
-<img src="Pasted image 20261107103926.png" width="300">
+<img src=".\image\Pasted image 20261107103926.png" width="300">
 
-<img src="Pasted image 20261107104410.png" width="300">
+<img src=".\image\Pasted image 20261107104410.png" width="300">
 
-<img src="Pasted image 20261107104634.png" width="300">
+<img src=".\image\Pasted image 20261107104634.png" width="300">
 
-<img src="Pasted image 20261107104731.png" width="300">
+<img src=".\image\Pasted image 20261107104731.png" width="300">
 
-<img src="Pasted image 20261107104823.png" width="300">
+<img src=".\image\Pasted image 20261107104823.png" width="300">
 
 ***
 ## 切换人物译名
@@ -44,11 +44,11 @@
 
 + 经典译名
 
-<img src="Pasted image 20261107101728.png" width="300">
+<img src=".\image\Pasted image 20261107101728.png" width="300">
 
 + 音译译名
 
-<img src="Pasted image 20261107103637.png" width="300">
+<img src=".\image\Pasted image 20261107103637.png" width="300">
 
 ## 还原英文
 
