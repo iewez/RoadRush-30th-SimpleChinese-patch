@@ -9,7 +9,7 @@
   
   在安装补丁前确认语言选项如下：
   
- ![](<Pasted image 20261107103102.png>)
+ <img src=".\image\Pasted image 20261107103102.png" width="600">
 
 ## 如何安装
 
