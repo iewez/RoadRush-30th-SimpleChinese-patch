@@ -25,6 +25,11 @@ if not errorlevel 1 (
   pause
   exit /b 1
 )
+rem 早期测试版曾改写过 exe 里的车手名，如存在备份则顺手还原（正常安装不会产生该备份）
+if exist "%~dp0备份\RoadRash95.exe.orig" (
+  copy /y "%~dp0备份\RoadRash95.exe.orig" "!GAME!\RoadRash95.exe" >nul
+  echo 检测到早期版本改过 exe，已还原原版 exe。
+)
 if not exist "%~dp0备份\ENU-en.dll" (
   echo.
   echo   没有找到安装时生成的 备份\ENU-en.dll。
