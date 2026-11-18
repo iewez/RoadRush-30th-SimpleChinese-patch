@@ -5,8 +5,6 @@
 ## 适用版本
 
   Steam《Road Rash™ 30th Anniversary Edition》
-  通过替换`RoadRash\TEXT\ENU.DLL`实现汉化
-  
   在安装补丁前确认语言选项如下：
   
  <img src=".\image\Pasted image 20261107103102.png" width="600">
