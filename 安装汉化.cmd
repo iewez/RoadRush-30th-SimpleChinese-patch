@@ -15,7 +15,7 @@ if not defined GAME (
   )
 )
 echo.
-echo   ===== 暴力摩托 30 周年纪念版 简体中文汉化补丁 v1.1 =====
+echo   ===== 暴力摩托 30 周年纪念版 简体中文汉化补丁 v1.2 =====
 echo.
 if not defined GAME (
   echo   没有自动找到游戏目录。
@@ -44,12 +44,31 @@ if not exist "%~dp0备份\ENU-en.dll" (
   copy /y "!GAME!\TEXT\ENU.DLL" "%~dp0备份\ENU-en.dll" >nul
   echo   已备份原版语言文件到 备份\ENU-en.dll
 )
+if not exist "%~dp0备份\RoadRash95.exe.orig" (
+  copy /y "!GAME!\RoadRash95.exe" "%~dp0备份\RoadRash95.exe.orig" >nul
+  echo   已备份原版可执行文件到 备份\RoadRash95.exe.orig
+)
 copy /y "%~dp0ENU-cn.dll" "!GAME!\TEXT\ENU.DLL" >nul
 if errorlevel 1 (
   echo.
   echo   写入失败：请右键“以管理员身份运行”本文件，或确认游戏已退出。
   pause
   exit /b 1
+)
+echo   已写入中文语言文件。
+rem 让“立绘路径”改用固定英文键名，使中文名与人物立绘可同时存在
+set "PR="
+for /f "delims=" %%r in ('powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0_patch_exe.ps1" -Exe "!GAME!\RoadRash95.exe" -Data "%~dp0exe-patch.bin"') do set "PR=%%r"
+if "!PR!"=="patched" (
+  echo   已修正立绘路径（中文名与人物立绘可同时正常显示）。
+) else if "!PR!"=="already" (
+  echo   立绘路径已是修正状态。
+) else if "!PR!"=="mismatch-call" (
+  echo   警告：游戏版本与补丁不匹配，未改动 exe；文本汉化仍然生效，立绘可能仍不显示。
+) else if "!PR!"=="cave-not-clean" (
+  echo   警告：exe 的代码空位已被占用，未改动 exe；文本汉化仍然生效。
+) else (
+  echo   警告：立绘路径修正未执行（!PR!）。
 )
 echo.
 echo   安装完成：简体中文（通用译名）。
